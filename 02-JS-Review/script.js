@@ -174,6 +174,74 @@ const updatedBook = {
     // Adding a new property
      moviePublicationDate: '2001-12-19',
      //Overwriting an existing property
-     pages: 1210};
+    //  pages: 1210,
+    };
 
 console.log(updatedBook);
+
+
+
+
+const summary = `${title} a  ${pages}-page long book was written by ${author} and published in ${publicationDate.split("-")[0]} `;
+
+summary;
+
+
+
+
+const pagesRange = pages > 1000 ? "over a thousand" : "less than 1000";
+pagesRange;
+
+console.log(`The book has ${pagesRange} pages`);
+
+
+
+function getYear(str){
+    return str.split("-")[0];
+};
+
+
+// const getYear = (str) => str.split("-")[0];
+
+
+console.log(getYear(publicationDate));
+
+
+
+//short circuiting
+
+
+// falsy: 0 , ' ' , null , undefined
+
+console.log(true && "Some string");
+console.log(false && "Some string");
+
+
+console.log("jawad" && "Some string");
+console.log(0 && "Some string");
+
+
+
+console.log(true || "Some string");
+console.log(false || "Some string");
+
+
+
+console.log((data[0].reviews.librarything.reviewsCount));
+
+
+
+function getTotalReviewCount(books){
+    const goodreads = books.reviews.goodreads.reviewsCount;
+    const librarything = books.reviews.librarything?.reviewsCount  ?? 0;
+
+    return goodreads + librarything;
+}
+
+
+
+console.log( getTotalReviewCount(books));
+
+
+
+
