@@ -287,3 +287,42 @@ console.log(adventureBooks);
 
 
 
+const pagesAllBooks = books.reduce((sum , book) => sum + book.pages ,0)
+
+
+const arr = [3,7,1,9,6];
+const sorted = arr.slice().sort((a,b) => a-b);
+console.log(sorted);
+
+
+
+const sortedByPages = books.slice().sort((a,b) => a.pages - b.pages);
+console.log(sortedByPages);
+
+
+// 1) Add book object to array
+
+const newBook = {
+  id: 6,
+  title: "Title",
+  author: " Authors",
+};
+
+const booksAfterAdd = [...books , newBook];
+
+
+// 2) Delete book object from Array
+
+const booksAfterDelete = booksAfterAdd.filter((book) => book.id !== 3);
+
+
+
+// Update  book object in the array
+
+const booksAfterUpdate = booksAfterDelete.map((book) => book.id ===1 ? {} : book);
+
+
+
+
+
+
