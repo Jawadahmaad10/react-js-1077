@@ -243,5 +243,47 @@ function getTotalReviewCount(books){
 console.log( getTotalReviewCount(books));
 
 
+// Map methhod
+
+
+const x = [1,2,3,4,5].map((el) => el * 2);
+
+console.log(x);
+
+
+const titles = books.map((x) => x.title);
+console.log(titles);
+
+
+// returning object from map method
+
+const essentialData = books.map((book) => {
+ return{
+  title: book.title,
+  author : book.author,
+  reviewsCount: getTotalReviewCount(book)
+ }
+});
+
+
+
+
+// Filter method
+
+
+const longBooks = books
+.filter((book) => book.pages >500)
+.filter((book) => book.hasMovieAdaptation);
+
+console.log(longBooks)
+
+
+const adventureBooks = books
+.filter((books) => books.genres.include("adventure"))
+.map((book) => book.title);
+
+console.log(adventureBooks);
+
+
 
 
